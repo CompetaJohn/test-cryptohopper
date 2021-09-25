@@ -19,12 +19,12 @@ const MenuUserMobile = () => {
     <div className={styles.wrapper}>
       <IconButton
         size="large"
+        edge="end"
         aria-label="account of current user"
         aria-controls="menu-user-mobile"
         aria-haspopup="true"
         onClick={handleMenu}
         className={styles.userMenu}
-        edge="end"
       >
         <AccountCircle />
       </IconButton>

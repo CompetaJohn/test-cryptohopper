@@ -12,3 +12,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.desktopOnly {
+  @include for-tablet{
+    display: none;
+  }
+  @include for-mobile{
+    display: none;
+  }
+}
+.hideOnDesktop {
+  @include for-desktop{
+    display: none;
+  }
+}
