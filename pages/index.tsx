@@ -6,6 +6,7 @@ import PageHeader from "../components/PageHeader";
 import {useState} from "react";
 import {PricingPeriodType} from "../interfaces";
 import PricingSwitch from "../components/PricingSwitch";
+import PricingBlock from "../components/PricingBlock";
 
 const Index: NextPage = () => {
   const [pricingPeriod, setPricingPeriod] = useState<PricingPeriodType>('month')
@@ -25,7 +26,7 @@ const Index: NextPage = () => {
           subtitle={'Become a member & join over 300.000 other Hoppers today! Cryptohopper is free to use, create your free account now!'}
         />
         <PricingSwitch updateValue={setPricingPeriod} value={pricingPeriod} />
-        {/*<PricingBlock prices={'monthly'}/>*/}
+        <PricingBlock pricingPeriod={pricingPeriod} />
 
         <p className={styles.description}>
           Get started by editing{' '}

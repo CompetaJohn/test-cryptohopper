@@ -1,0 +1,29 @@
+@import "styles/tokens";
+.title{
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+.bulletPointsWrapper {
+  padding-left: 20px;
+}
+.bulletPoint{
+  padding: 4px 0;
+}
+.wrapper{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  width: 357px;
+  height: 470px;
+  border-radius: 37px;
+  padding: 48px;
+}
+.button{
+  border-radius: 20px;
+  color: $colorMainBlue;
+  border-color: $colorMainBlue;
+  &:hover {
+    border-color: $colorMainBlue;
+  }
+}

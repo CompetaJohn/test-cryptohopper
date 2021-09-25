@@ -9,22 +9,25 @@ interface PricingSwitchProps {
   value: PricingPeriodType
 }
 
-const PricingSwitch:React.FC<PricingSwitchProps> = ({updateValue, value}) => {
+const PricingSwitch: React.FC<PricingSwitchProps> = ({updateValue, value}) => {
   const handleChange = () => {
-    const updatedValue = (value === 'year')? 'month' : 'year';
+    const updatedValue = (value === 'year') ? 'month' : 'year';
     updateValue(updatedValue);
   }
-  return <>
-    <ToggleButtonGroup
-      value={value}
-      exclusive
-      onChange={handleChange}
-      className={styles.toggleButtonGroup}
-    >
-      <ToggleButton className={`${styles.toggleButton} ${value==='year'? styles.selected : ''}`} value="year">Annually</ToggleButton>
-      <ToggleButton className={`${styles.toggleButton} ${value==='month'? styles.selected : ''}`} value="month">Monthly</ToggleButton>
-    </ToggleButtonGroup>
-    );
+  return (
+    <>
+      <ToggleButtonGroup
+        value={value}
+        exclusive
+        onChange={handleChange}
+        className={styles.toggleButtonGroup}
+      >
+        <ToggleButton className={`${styles.toggleButton} ${value === 'year' ? styles.selected : ''}`}
+                      value="year">Annually</ToggleButton>
+        <ToggleButton className={`${styles.toggleButton} ${value === 'month' ? styles.selected : ''}`}
+                      value="month">Monthly</ToggleButton>
+      </ToggleButtonGroup>
     </>
+  )
 }
 export default PricingSwitch
