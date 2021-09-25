@@ -1,0 +1,21 @@
+@import "styles/tokens";
+.toggleButton {
+  border-width: 0;
+  border-radius: 100px !important;
+  margin: 4px;
+  padding: 12px 48px;
+  color: $colorBlack;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.selected.selected {
+  color: $colorMainBlue;
+  background-color: $colorWhite;
+  &:hover {
+    background-color: $colorWhite;
+  }
+}
+.toggleButtonGroup {
+  background-color: $colorGrey;
+  border-radius: 200px;
+}

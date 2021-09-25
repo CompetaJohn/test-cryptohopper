@@ -3,8 +3,13 @@ import Head from 'next/head'
 import styles from './index.module.scss'
 import NavBar from "../components/NavBar";
 import PageHeader from "../components/PageHeader";
+import {useState} from "react";
+import {PricingPeriodType} from "../interfaces";
+import PricingSwitch from "../components/PricingSwitch";
 
 const Index: NextPage = () => {
+  const [pricingPeriod, setPricingPeriod] = useState<PricingPeriodType>('month')
+  console.log(pricingPeriod)
   return (
     <div className={styles.container}>
       <Head>
@@ -14,12 +19,13 @@ const Index: NextPage = () => {
       </Head>
 
       <NavBar />
-
       <main className={styles.main}>
         <PageHeader
           title={'Pricing'}
           subtitle={'Become a member & join over 300.000 other Hoppers today! Cryptohopper is free to use, create your free account now!'}
         />
+        <PricingSwitch updateValue={setPricingPeriod} value={pricingPeriod} />
+        {/*<PricingBlock prices={'monthly'}/>*/}
 
         <p className={styles.description}>
           Get started by editing{' '}
