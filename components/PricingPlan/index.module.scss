@@ -9,6 +9,12 @@
   }
 }
 
+.hideOnDesktop {
+  @include for-desktop {
+    display: none;
+  }
+}
+
 .title {
   font-weight: bold;
   padding-bottom: 8px;
@@ -28,24 +34,27 @@
   font-size: 32px;
   line-height: 100%;
   border-radius: 37px;
+  padding: 24px;
+  @include for-mobile {
+    width: 357px;
+  }
 
-  padding: 24px 48px;
+  @include for-tablet {
+    width: 357px;
+  }
   @include for-desktop {
     max-width: 357px;
     padding: 48px;
   }
 
   &Basic {
-    height: 199px;
-
     @include for-desktop {
-    margin-top: 60px;
+      margin-top: 60px;
       height: 470px;
     }
   }
 
   &Enhanced {
-    height: 249px;
     display: inline-block !important;
     @include for-desktop {
       height: 590px;
@@ -54,6 +63,7 @@
 }
 
 .button {
+  margin: 0 4px;
   padding: 8px 20px;
   border-radius: 20px;
   font-weight: bold;
@@ -88,5 +98,18 @@
       border-color: $colorMainBlue;
       background-color: $colorMainBlue;
     }
+  }
+}
+
+.flavourText {
+  margin-top: 8px;
+  color: $colorMainBlue;
+  @include for-mobile {
+    float: right;
+    margin-top: -32px;
+  }
+  @include for-tablet {
+    float: right;
+    margin-top: -32px;
   }
 }

@@ -1,7 +1,7 @@
 import { PricingPeriodType } from "../../interfaces";
 import { Button, Paper, Typography } from "@mui/material";
 import styles from "./index.module.scss";
-
+import image from "../../public/price-plan-footers/1.png";
 export interface PricingPlanProps {
   title: string;
   priceMonthly: string;
@@ -11,6 +11,7 @@ export interface PricingPlanProps {
   bulletPoints: string[];
   enhance?: boolean;
   backgroundFile?: string;
+  flavourText?: string;
 }
 
 const PricingPlan: React.FC<PricingPlanProps> = ({
@@ -21,6 +22,7 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
   hidePricingPeriod,
   bulletPoints,
   enhance,
+  flavourText,
 }) => {
   return (
     <Paper
@@ -46,10 +48,17 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
       </Typography>
       <Typography variant="h5" component="div" gutterBottom>
         {`
-          ${pricingPeriod === "month" ? priceMonthly : priceYearly}${
+            ${pricingPeriod === "month" ? priceMonthly : priceYearly}${
           hidePricingPeriod ? "" : "/month"
         }
-        `}
+          `}
+      </Typography>
+
+      <Typography
+        variant="body2"
+        className={`${styles.flavourText} ${styles.hideOnDesktop}`}
+      >
+        {flavourText}
       </Typography>
       <Typography
         variant="body1"
@@ -77,6 +86,12 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
       >
         Get Started
       </Button>
+      <Typography
+        variant="body2"
+        className={`${styles.flavourText} ${styles.desktopOnly}`}
+      >
+        {flavourText}
+      </Typography>
     </Paper>
   );
 };

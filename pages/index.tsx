@@ -1,45 +1,69 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from './index.module.scss'
+import type { NextPage } from "next";
+import Head from "next/head";
+import styles from "./index.module.scss";
 import NavBar from "../components/NavBar";
 import PageHeader from "../components/PageHeader";
-import {useState} from "react";
-import {PricingPeriodType} from "../interfaces";
+import { useState } from "react";
+import { PricingPeriodType } from "../interfaces";
 import PricingSwitch from "../components/PricingSwitch";
 import PricingBlock from "../components/PricingBlock";
 
 const Index: NextPage = () => {
-  const [pricingPeriod, setPricingPeriod] = useState<PricingPeriodType>('month')
+  const [pricingPeriod, setPricingPeriod] =
+    useState<PricingPeriodType>("month");
 
   //ToDo: Retrieve this data from DB
   const pricingPlans = [
     {
-      title:'Pioneer',
-      priceMonthly:'Free',
-      priceYearly:'Free',
+      title: "Pioneer",
+      priceMonthly: "Free",
+      priceYearly: "Free",
       hidePricingPeriod: true,
-      bulletPoints:['20 positions', 'portfolio management', 'manual trading', 'all available exchanges'],
+      bulletPoints: [
+        "20 positions",
+        "portfolio management",
+        "manual trading",
+        "all available exchanges",
+      ],
     },
     {
-      title:'Explorer',
-      priceMonthly:'$19.00',
-      priceYearly:'$16.58',
-      bulletPoints:['80 positions', 'portfolio management', 'manual trading', 'all available exchanges'],
+      title: "Explorer",
+      priceMonthly: "$19.00",
+      priceYearly: "$16.58",
+      bulletPoints: [
+        "80 positions",
+        "portfolio management",
+        "manual trading",
+        "all available exchanges",
+      ],
+      flavourText: "Try 7 days for free!",
     },
     {
-      title:'Adventurer',
-      priceMonthly:'$49.00',
-      priceYearly:'$41.58',
-      bulletPoints:['200 positions', 'portfolio management', 'manual trading', 'all available exchanges'],
+      title: "Adventurer",
+      priceMonthly: "$49.00",
+      priceYearly: "$41.58",
+      bulletPoints: [
+        "200 positions",
+        "portfolio management",
+        "manual trading",
+        "all available exchanges",
+      ],
     },
     {
-      title:'Hero',
-      priceMonthly:'$99.00',
-      priceYearly:'$83.25',
-      bulletPoints:['500 positions', 'portfolio management', 'manual trading', 'all coin signals', 'market arbitrage', 'algorithm intelligence'],
+      title: "Hero",
+      priceMonthly: "$99.00",
+      priceYearly: "$83.25",
+      bulletPoints: [
+        "500 positions",
+        "portfolio management",
+        "manual trading",
+        "all coin signals",
+        "market arbitrage",
+        "algorithm intelligence",
+      ],
       enhance: true,
-    }
-  ]
+    },
+  ];
   return (
     <div className={styles.container}>
       <Head>
@@ -51,14 +75,19 @@ const Index: NextPage = () => {
       <NavBar />
       <main className={styles.main}>
         <PageHeader
-          title={'Pricing.'}
-          subtitle={'Become a member & join over 300.000 other Hoppers today! Cryptohopper is free to use, create your free account now!'}
+          title={"Pricing."}
+          subtitle={
+            "Become a member & join over 300.000 other Hoppers today! Cryptohopper is free to use, create your free account now!"
+          }
         />
         <PricingSwitch updateValue={setPricingPeriod} value={pricingPeriod} />
-        <PricingBlock pricingPeriod={pricingPeriod} pricingPlans={pricingPlans} />
+        <PricingBlock
+          pricingPeriod={pricingPeriod}
+          pricingPlans={pricingPlans}
+        />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

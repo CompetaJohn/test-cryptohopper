@@ -24,6 +24,7 @@ const PricingBlock: React.FC<PricingBlockProps> = ({
             bulletPoints={plan.bulletPoints}
             hidePricingPeriod={!!plan.hidePricingPeriod}
             enhance={plan.enhance === true}
+            flavourText={plan.flavourText ? plan.flavourText : ""}
           />
         </div>
       ))}
