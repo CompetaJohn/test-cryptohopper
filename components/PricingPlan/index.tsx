@@ -1,4 +1,4 @@
-import {PricingPeriodType} from "../../interfaces";
+import { PricingPeriodType } from "../../interfaces";
 import { Button, Paper, Typography } from "@mui/material";
 import styles from "./index.module.scss";
 
@@ -9,7 +9,7 @@ export interface PricingPlanProps {
   pricingPeriod?: PricingPeriodType;
   hidePricingPeriod?: boolean;
   bulletPoints: string[];
-  enhance?: boolean
+  enhance?: boolean;
   backgroundFile?: string;
 }
 
@@ -20,43 +20,64 @@ const PricingPlan: React.FC<PricingPlanProps> = ({
   pricingPeriod,
   hidePricingPeriod,
   bulletPoints,
-  enhance
+  enhance,
 }) => {
   return (
-    <Paper className={`${styles.wrapper} ${enhance ? styles.wrapperEnhanced : styles.wrapperBasic}`}>
+    <Paper
+      className={`${styles.wrapper} ${
+        enhance ? styles.wrapperEnhanced : styles.wrapperBasic
+      }`}
+    >
       {enhance && (
-        <Button variant="outlined" className={styles.button}>Best Value</Button>
+        <Button
+          variant="outlined"
+          className={`${styles.button} ${styles.bestValueButton}`}
+        >
+          Best Value
+        </Button>
       )}
-      <Typography variant="h4" component="div" gutterBottom className={styles.title}>
+      <Typography
+        variant="h5"
+        component="div"
+        gutterBottom
+        className={styles.title}
+      >
         {title}
       </Typography>
-      <Typography variant="h4" component="div" gutterBottom>
+      <Typography variant="h5" component="div" gutterBottom>
         {`
-          ${pricingPeriod === 'month' ? priceMonthly : priceYearly}${hidePricingPeriod ? '' : '/month'}
+          ${pricingPeriod === "month" ? priceMonthly : priceYearly}${
+          hidePricingPeriod ? "" : "/month"
+        }
         `}
       </Typography>
-      <Typography variant="body1" component="div" gutterBottom>
+      <Typography
+        variant="body1"
+        component="div"
+        gutterBottom
+        className={styles.desktopOnly}
+      >
         <ul className={styles.bulletPointsWrapper}>
           {bulletPoints.map((point, i) => (
-            <li
-              key={`${title}-bullet-${i}`}
-              className={styles.bulletPoint}
-            >
+            <li key={`${title}-bullet-${i}`} className={styles.bulletPoint}>
               {point}
             </li>
-          ))
-          }
+          ))}
         </ul>
       </Typography>
       <Button
         variant="outlined"
         className={`
-          ${styles.button} ${enhance? styles.getStartedButtonEnhanced : styles.getStartedButtonBasic}
+          ${styles.button} ${
+          enhance
+            ? styles.getStartedButtonEnhanced
+            : styles.getStartedButtonBasic
+        }
         `}
       >
         Get Started
       </Button>
     </Paper>
-  )
-}
-export default PricingPlan
+  );
+};
+export default PricingPlan;

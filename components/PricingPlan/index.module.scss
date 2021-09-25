@@ -1,5 +1,14 @@
 @import "styles/tokens";
 
+.desktopOnly {
+  @include for-tablet {
+    display: none;
+  }
+  @include for-mobile {
+    display: none;
+  }
+}
+
 .title {
   font-weight: bold;
   padding-bottom: 8px;
@@ -18,16 +27,29 @@
   font-weight: 600;
   font-size: 32px;
   line-height: 100%;
-  max-width: 357px;
   border-radius: 37px;
-  padding: 48px;
+
+  padding: 24px 48px;
+  @include for-desktop {
+    max-width: 357px;
+    padding: 48px;
+  }
 
   &Basic {
-    height: 470px;
+    height: 199px;
+
+    @include for-desktop {
+    margin-top: 60px;
+      height: 470px;
+    }
   }
 
   &Enhanced {
-    height: 590px;
+    height: 249px;
+    display: inline-block !important;
+    @include for-desktop {
+      height: 590px;
+    }
   }
 }
 
@@ -35,6 +57,14 @@
   padding: 8px 20px;
   border-radius: 20px;
   font-weight: bold;
+}
+
+.bestValueButton {
+  background-color: rgba($colorMainBlue, 0.06) !important;
+  color: $colorMainBlue;
+  border-color: rgba($colorMainBlue, 0.06) !important;
+  margin-bottom: 8px;
+  font-weight: bold !important;
 }
 
 .getStartedButton {
@@ -52,7 +82,11 @@
     font-weight: normal;
     color: $colorWhite;
     background-color: $colorMainBlue;
+    border-color: $colorMainBlue;
 
+    &:hover {
+      border-color: $colorMainBlue;
+      background-color: $colorMainBlue;
+    }
   }
-
 }

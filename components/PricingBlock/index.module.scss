@@ -1,18 +1,21 @@
 @import "styles/tokens";
 
-.wrapper {
-  max-width: $desktopBreakpoint;
-  width: 100%;
-  display: flex;
-  justify-items: center;
-  justify-content: space-between;
+.pricingBlock {
+  &Wrapper {
+    max-width: $desktopBreakpoint;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 
-  @include for-tablet {
-    align-items: center;
-    flex-direction: column-reverse;
-  }
-  @include for-mobile {
-    align-items: center;
-    flex-direction: column-reverse;
+    @include for-tablet {
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+    @include for-mobile {
+      align-items: center;
+      flex-direction: column-reverse;
+    }
   }
 }

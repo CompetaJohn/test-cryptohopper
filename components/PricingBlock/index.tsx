@@ -13,7 +13,7 @@ const PricingBlock: React.FC<PricingBlockProps> = ({
   pricingPlans,
 }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.pricingBlockWrapper}>
       {pricingPlans.map((plan) => (
         <div key={`${plan}-pricingBlock`}>
           <PricingPlan
@@ -30,4 +30,4 @@ const PricingBlock: React.FC<PricingBlockProps> = ({
     </div>
   );
 };
-export default PricingBlock
+export default PricingBlock;
