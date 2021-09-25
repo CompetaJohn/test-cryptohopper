@@ -10,7 +10,36 @@ import PricingBlock from "../components/PricingBlock";
 
 const Index: NextPage = () => {
   const [pricingPeriod, setPricingPeriod] = useState<PricingPeriodType>('month')
-  console.log(pricingPeriod)
+
+  //ToDo: Retrieve this data from DB
+  const pricingPlans = [
+    {
+      title:'Pioneer',
+      priceMonthly:'Free',
+      priceYearly:'Free',
+      hidePricingPeriod: true,
+      bulletPoints:['20 positions', 'portfolio management', 'manual trading', 'all available exchanges'],
+    },
+    {
+      title:'Explorer',
+      priceMonthly:'$19.00',
+      priceYearly:'$16.58',
+      bulletPoints:['80 positions', 'portfolio management', 'manual trading', 'all available exchanges'],
+    },
+    {
+      title:'Adventurer',
+      priceMonthly:'$49.00',
+      priceYearly:'$41.58',
+      bulletPoints:['200 positions', 'portfolio management', 'manual trading', 'all available exchanges'],
+    },
+    {
+      title:'Hero',
+      priceMonthly:'$99.00',
+      priceYearly:'$83.25',
+      bulletPoints:['500 positions', 'portfolio management', 'manual trading', 'all coin signals', 'market arbitrage', 'algorithm intelligence'],
+      enhance: true,
+    }
+  ]
   return (
     <div className={styles.container}>
       <Head>
@@ -22,46 +51,11 @@ const Index: NextPage = () => {
       <NavBar />
       <main className={styles.main}>
         <PageHeader
-          title={'Pricing'}
+          title={'Pricing.'}
           subtitle={'Become a member & join over 300.000 other Hoppers today! Cryptohopper is free to use, create your free account now!'}
         />
         <PricingSwitch updateValue={setPricingPeriod} value={pricingPeriod} />
-        <PricingBlock pricingPeriod={pricingPeriod} />
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <PricingBlock pricingPeriod={pricingPeriod} pricingPlans={pricingPlans} />
       </main>
     </div>
   )

@@ -21,24 +21,24 @@ const MenuMainMobile = () => {
         size="large"
         edge="start"
         aria-label="menu-main-mobile"
-        sx={{mr: 2}}
+        sx={{ mr: 2 }}
         onClick={handleMenu}
         className={styles.iconButton}
       >
-        <MenuIcon/>
+        <MenuIcon />
       </IconButton>
       <Menu
         id="menu-main-mobile"
         anchorEl={anchor}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         className={styles.menu}
         keepMounted
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         open={Boolean(anchor)}
         onClose={handleClose}
@@ -51,7 +51,7 @@ const MenuMainMobile = () => {
         <MenuItem onClick={handleClose}>Company</MenuItem>
       </Menu>
     </>
-  )
+  );
 }
 
 

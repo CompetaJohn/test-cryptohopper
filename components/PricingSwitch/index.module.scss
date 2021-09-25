@@ -1,4 +1,5 @@
 @import "styles/tokens";
+
 .toggleButton {
   border-width: 0;
   border-radius: 100px !important;
@@ -8,14 +9,17 @@
   font-weight: bold;
   text-transform: capitalize;
 }
+
 .selected.selected {
   color: $colorMainBlue;
   background-color: $colorWhite;
+
   &:hover {
     background-color: $colorWhite;
   }
 }
+
 .toggleButtonGroup {
-  background-color: $colorGrey;
+  background-color: $colorGreyLight;
   border-radius: 200px;
 }

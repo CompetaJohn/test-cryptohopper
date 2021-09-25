@@ -1,8 +1,18 @@
 @import "styles/tokens";
-.wrapper{
-  max-width: 1500px;
+
+.wrapper {
+  max-width: $desktopBreakpoint;
   width: 100%;
   display: flex;
   justify-items: center;
   justify-content: space-between;
+
+  @include for-tablet {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  @include for-mobile {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
 }

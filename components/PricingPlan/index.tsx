@@ -1,24 +1,39 @@
 import {PricingPeriodType} from "../../interfaces";
-import {Button, Paper, Typography} from "@mui/material";
-import styles from './index.module.scss';
+import { Button, Paper, Typography } from "@mui/material";
+import styles from "./index.module.scss";
 
-interface PricingPlanProps {
+export interface PricingPlanProps {
   title: string;
-  price: string;
+  priceMonthly: string;
+  priceYearly: string;
   pricingPeriod?: PricingPeriodType;
+  hidePricingPeriod?: boolean;
   bulletPoints: string[];
+  enhance?: boolean
   backgroundFile?: string;
 }
 
-const PricingPlan: React.FC<PricingPlanProps> = ({title, price, pricingPeriod, bulletPoints}) => {
+const PricingPlan: React.FC<PricingPlanProps> = ({
+  title,
+  priceMonthly,
+  priceYearly,
+  pricingPeriod,
+  hidePricingPeriod,
+  bulletPoints,
+  enhance
+}) => {
   return (
-    <Paper className={styles.wrapper}>
-      <Typography variant="h5" component="div" gutterBottom className={styles.title}>
+    <Paper className={`${styles.wrapper} ${enhance ? styles.wrapperEnhanced : styles.wrapperBasic}`}>
+      {enhance && (
+        <Button variant="outlined" className={styles.button}>Best Value</Button>
+      )}
+      <Typography variant="h4" component="div" gutterBottom className={styles.title}>
         {title}
       </Typography>
-      <Typography variant="h5" component="div" gutterBottom>
-        {price}
-        {pricingPeriod? `/${pricingPeriod}` : ''}
+      <Typography variant="h4" component="div" gutterBottom>
+        {`
+          ${pricingPeriod === 'month' ? priceMonthly : priceYearly}${hidePricingPeriod ? '' : '/month'}
+        `}
       </Typography>
       <Typography variant="body1" component="div" gutterBottom>
         <ul className={styles.bulletPointsWrapper}>
@@ -33,7 +48,14 @@ const PricingPlan: React.FC<PricingPlanProps> = ({title, price, pricingPeriod, b
           }
         </ul>
       </Typography>
-      <Button variant="outlined" className={styles.button}>Get Started</Button>
+      <Button
+        variant="outlined"
+        className={`
+          ${styles.button} ${enhance? styles.getStartedButtonEnhanced : styles.getStartedButtonBasic}
+        `}
+      >
+        Get Started
+      </Button>
     </Paper>
   )
 }

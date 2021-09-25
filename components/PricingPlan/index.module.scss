@@ -1,29 +1,58 @@
 @import "styles/tokens";
-.title{
+
+.title {
   font-weight: bold;
   padding-bottom: 8px;
 }
+
 .bulletPointsWrapper {
   padding-left: 20px;
 }
-.bulletPoint{
+
+.bulletPoint {
   padding: 4px 0;
 }
-.wrapper{
+
+.wrapper {
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 100%;
   width: 357px;
-  height: 470px;
   border-radius: 37px;
   padding: 48px;
-}
-.button{
-  border-radius: 20px;
-  color: $colorMainBlue;
-  border-color: $colorMainBlue;
-  &:hover {
-    border-color: $colorMainBlue;
+
+  &Basic {
+    height: 470px;
   }
+
+  &Enhanced {
+    height: 590px;
+  }
+}
+
+.button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.getStartedButton {
+  &Basic {
+    color: $colorDarkText;
+    background-color: $colorWhite;
+    border-color: $colorGreyDark;
+
+    &:hover {
+      border-color: $colorGreyDark;
+    }
+  }
+
+  &Enhanced {
+    font-weight: normal;
+    color: $colorWhite;
+    background-color: $colorMainBlue;
+
+  }
+
 }

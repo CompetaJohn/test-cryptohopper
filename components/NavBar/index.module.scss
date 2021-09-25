@@ -1,9 +1,14 @@
 @import "styles/tokens";
 
+.appBar {
+  background-color: $colorWhite !important;
+  width: 100vw !important;
+}
+
 .toolbar {
   width: 100%;
   display: flex;
   align-content: space-between;
-  justify-content:  space-between;
+  justify-content: space-between;
   align-items: center;
 }

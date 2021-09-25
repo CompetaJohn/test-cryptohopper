@@ -5,7 +5,6 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import React from "react";
 
-
 const MenuUserMobile = () => {
   const [anchor, setAnchor] = React.useState(null);
 
@@ -27,20 +26,20 @@ const MenuUserMobile = () => {
         className={styles.userMenu}
         edge="end"
       >
-        <AccountCircle/>
+        <AccountCircle />
       </IconButton>
       <Menu
         id="menu-user-mobile"
         anchorEl={anchor}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         className={styles.menu}
         keepMounted
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         open={Boolean(anchor)}
         onClose={handleClose}
@@ -49,6 +48,6 @@ const MenuUserMobile = () => {
         <MenuItem onClick={handleClose}>Signup</MenuItem>
       </Menu>
     </div>
-  )
-}
+  );
+};
 export default MenuUserMobile;
