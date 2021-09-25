@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from './index.module.scss'
 import NavBar from "../components/NavBar";
+import PageHeader from "../components/PageHeader";
 
 const Index: NextPage = () => {
   return (
@@ -13,7 +14,12 @@ const Index: NextPage = () => {
       </Head>
 
       <NavBar />
+
       <main className={styles.main}>
+        <PageHeader
+          title={'Pricing'}
+          subtitle={'Become a member & join over 300.000 other Hoppers today! Cryptohopper is free to use, create your free account now!'}
+        />
 
         <p className={styles.description}>
           Get started by editing{' '}
