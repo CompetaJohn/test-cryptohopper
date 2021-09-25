@@ -1,0 +1,11 @@
+@import "styles/tokens";
+.menuItem {
+  color: $colorDarkText;
+  font-size: 16px;
+  @include for-tablet {
+    display: none;
+  }
+  @include for-mobile {
+    display: none;
+  }
+}

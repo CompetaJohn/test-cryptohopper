@@ -44,12 +44,11 @@ const MenuMainMobile = () => {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>Features</MenuItem>
+        <MenuItem onClick={handleClose}>Charts</MenuItem>
         <MenuItem onClick={handleClose}>Pricing</MenuItem>
         <MenuItem onClick={handleClose}>Marketplace</MenuItem>
-        <MenuItem onClick={handleClose}>Resources</MenuItem>
-        <MenuItem onClick={handleClose}>About</MenuItem>
-        <MenuItem onClick={handleClose}>Log in</MenuItem>
-        <MenuItem onClick={handleClose}>Start Free Trial</MenuItem>
+        <MenuItem onClick={handleClose}>Learn</MenuItem>
+        <MenuItem onClick={handleClose}>Company</MenuItem>
       </Menu>
     </>
   )

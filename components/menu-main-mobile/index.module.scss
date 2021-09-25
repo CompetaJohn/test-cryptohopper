@@ -1,4 +1,7 @@
 @import "styles/tokens";
 .iconButton {
   color: $colorDarkText;
+  @include for-desktop {
+    display: none;
+  }
 }

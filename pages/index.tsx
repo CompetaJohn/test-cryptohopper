@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from './index.module.scss'
-import Header from "../components/header";
+import NavBar from "../components/nav-bar";
 
 const Index: NextPage = () => {
   return (
@@ -12,7 +12,7 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <NavBar />
       <main className={styles.main}>
 
         <p className={styles.description}>

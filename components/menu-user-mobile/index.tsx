@@ -17,7 +17,7 @@ const MenuUserMobile = () => {
     setAnchor(null);
   };
   return (
-    <>
+    <div className={styles.wrapper}>
       <IconButton
         size="large"
         aria-label="account of current user"
@@ -25,6 +25,7 @@ const MenuUserMobile = () => {
         aria-haspopup="true"
         onClick={handleMenu}
         className={styles.userMenu}
+        edge="end"
       >
         <AccountCircle/>
       </IconButton>
@@ -47,7 +48,7 @@ const MenuUserMobile = () => {
         <MenuItem onClick={handleClose}>Login</MenuItem>
         <MenuItem onClick={handleClose}>Signup</MenuItem>
       </Menu>
-    </>
+    </div>
   )
 }
 export default MenuUserMobile;
