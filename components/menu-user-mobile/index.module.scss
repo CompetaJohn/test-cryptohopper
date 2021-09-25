@@ -1,5 +1,12 @@
 @import "styles/tokens";
 
+.menu {
+  color: $colorDarkText;
+}
+.userMenu {
+  color: $colorMainBlue;
+}
+
 .toolbar {
   width: 100%;
   display: flex;
