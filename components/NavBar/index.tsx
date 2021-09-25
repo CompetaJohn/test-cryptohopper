@@ -2,11 +2,11 @@ import React from "react";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import styles from './index.module.scss';
-import MenuMainMobile from "../menu-main-mobile";
-import Logo from "../logo";
-import MenuUserMobile from "../menu-user-mobile";
-import MenuMainDesktop from "../menu-main-desktop";
-import MenuUserDesktop from "../menu-user-desktop";
+import MenuMainMobile from "../MenuMainMobile";
+import Logo from "../Logo";
+import MenuUserMobile from "../MenuUserMobile";
+import MenuMainDesktop from "../MenuMainDesktop";
+import MenuUserDesktop from "../MenuUserDesktop";
 
 const NavBar = () => {
   return (
