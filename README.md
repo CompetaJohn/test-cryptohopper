@@ -40,5 +40,6 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
         - Passing price plans via props from page level (should really come from a DB)
         - Adding various feature to the PricingPlan component
 - 2021-09-26 10:30-10:35 (5 minutes)
-        - Copied time tracking into readme
+    - Copied time tracking into readme
+  
 *Sum Total spent on project:* 6 hours 55 minutes
